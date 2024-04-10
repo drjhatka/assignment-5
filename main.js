@@ -18,8 +18,8 @@
 //Assign Seat Click EventListener
     getSeatElements().forEach(element =>{
         element.addEventListener('click',(e)=>{
-            if(bookedSeats.length > 3 && !bookedSeats.includes(e.target)){setModelText('Error','You cannot select more than 4 seats','bg-red-700',modalIcons[1])}
-            else if(bookedSeats.includes(e.target)){setModelText('Error','You already selected this seat','bg-red-700',modalIcons[1])}
+            if(bookedSeats.length > 3 && !bookedSeats.includes(e.target)){setModelText('ERROR','You cannot select more than 4 seats','images/error.png')}
+            else if(bookedSeats.includes(e.target)){setModelText('ERROR','You already selected this seat','images/error.png')}
             else{
                 e.target.classList.add('bg-green-500','text-white')
                 bookedSeats.push(e.target)
@@ -41,16 +41,16 @@
                         ];    
     //validate...
         if((rules[0] || rules[1])){
-            if(!rules[2]) {alert('Book at least 4 seats to get a discount')}
+            if(!rules[2]) {setModelText('ERROR','Book at least 4 seats to get a discount','images/error.png')}
             else{
                 elements[0].classList.add('hidden');
                 elements[1].classList.remove('hidden');
                 rules[0] ? applyDiscount(elements,0.15):applyDiscount(elements,0.20);
-                setModelText('Discount Applied',(rules[0]? '15% Discount Applied Successfully!':'20% Discount Applied Successfully!'))
+                setModelText('Discount Applied',(rules[0]? '15% Discount Applied Successfully!':'20% Discount Applied Successfully!'),'images/success.png')
                 }          
         }//end outer if
         else{
-            return setModelText('ERROR','Enter Correct Coupon Code','bg-red-500')
+            return setModelText('ERROR','Enter Correct Coupon Code','images/error.png')
         } //end outer else
     })//end eventListener 
 
@@ -65,13 +65,13 @@ function getSeatElements(){
         return elements;
 }//end function
 
-function setModelText( msgTitle='', msgBody='', msg_color='bg-green-400', icon=modalIcons[0]){
+function setModelText( msgTitle='', msgBody='', img_ref ){
     const modal = document.getElementById('modal');
-    document.getElementById('msg_title').innerHTML = icon+' '+msgTitle;
-    document.getElementById('msg_title').classList.add(msg_color,'text-white','px-4','py-4');
-
+    document.getElementById('msg_title').innerHTML = `<div class='flex flex-col items-center justify-center'><img width=150 height=150 src='${img_ref}' /> <span>${msgTitle}<span></div>`;
+    document.getElementById('msg_title').classList.add('px-4','py-4','text-red-800');
     document.getElementById('msg_body').innerText = msgBody;
-    document.getElementById('modal_btn').innerText = 'Close';
+    document.getElementById('msg_body').classList.add('text-center','text-red-800')
+    document.getElementById('modal_btn').innerText = 'Continue';
     modal.classList.remove('hidden');
     modal.showModal();
 }//end function
