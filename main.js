@@ -36,32 +36,46 @@ getSeatElements().forEach(element =>{
 })//end forEach
 
 document.getElementById('coupon_btn').addEventListener('click',(e)=>{
-    //validate...
+    //validation rules...
     const rules = [(document.getElementById('coupon_code').value.localeCompare('NEW15')==0), 
                     (document.getElementById('coupon_code').value.localeCompare('Couple 20')==0), 
                     bookedSeats.length==4
                 ];   
+    //validate...
     if((rules[0] || rules[1])){
             const elements =[   document.getElementById('coupon_container'), 
                                 document.getElementById('discount_container'),
                                 document.getElementById('grand_total'),
                                 document.getElementById('discount'),
-                                document.getElementById('percent')
+                                document.getElementById('percent'),
+
+
                             ];
             if(!rules[2]) alert('Book at least 4 seats to get a discount')
             else {
                     elements[0].classList.add('hidden')
                     elements[1].classList.remove('hidden')
                     rules[0] ? applyDiscount(elements,0.15):applyDiscount(elements,0.20);
+                    setModelText('Discount Applied',(rules[0]? '15% Discount Applied Successfully!':'20% Discount Applied Successfully!'))
                 }//end inner if
         }//end inner if
     else{
-        return alert('Enter Correct Coupon Code')
+        return setModelText('Error-','Enter Correct Coupon Code','bg-red-500')
     } //end outer if 
-})
+})//end eventListener 
+
+function setModelText( msgTitle='', msgBody='', msg_color='bg-green-400'){
+    const modal = document.getElementById('modal');
+    document.getElementById('msg_title').innerText = msgTitle;
+    document.getElementById('msg_title').classList.add(msg_color,'text-white','px-4','py-4');
+    document.getElementById('msg_body').innerText = msgBody;
+    document.getElementById('modal_btn').innerText = 'Ok';
+    modal.classList.remove('hidden');
+    modal.showModal();
+}//end function
 
 function applyDiscount(elements, percent){
-            elements[2].innerText = parseInt(elements[2].innerText)-(parseInt(elements[2].innerText)*percent);
-            elements[3].innerText = (elements[2].innerText)*percent;
-            elements[4].innerText = (percent*100)+'%';
-}
+            elements[3].innerText = parseInt((elements[2].innerText))*percent;//discount
+            elements[2].innerText = parseInt(elements[2].innerText)-(parseInt(elements[2].innerText)*percent);//grand total
+            elements[4].innerText = (percent*100)+'%';//percent 
+}//end function

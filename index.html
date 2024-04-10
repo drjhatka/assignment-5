@@ -59,7 +59,9 @@
                     <button class="btn btn-success text-white text-xl text-center"><i class="fa fa-ticket fa-xl" aria-hidden="true"></i> Purchase tickets</button>
                 </div>
         </section>
-        <section class="flex  flex-col-reverse lg:gap-6 lg:pl-4 pr-2 lg:grid lg:grid-cols-2 border-2 py-6  ronded-3xl border-t-4 bg-amber-50 rounded-3xl border-green-400 mt-4" > 
+        <section class="flex  flex-col-reverse lg:gap-6 lg:pl-4 pr-2 lg:grid lg:grid-cols-2 border-2 py-6  
+                                ronded-3xl border-t-4 bg-amber-50 rounded-3xl border-green-400 mt-4" > 
+        <!-- Seat Layout Container -->
             <div id="seatContainer" class="bg-gray-50 py-6 px-4 rounded-md border-2">
                 <div class="text-2xl font-bold pb-4 px-2 border-dashed border-b-2">
                     <h1>Select Your Seat</h1>
@@ -79,14 +81,15 @@
                 </div>
               
             </div>
-            <div class="text-lg bg-gray-50 font-semibold pb-8 py-6 px-8  rounded-lg border-2 ">
+        <!-- Booking Row Container -->
+            <div class="relative text-lg bg-gray-50 font-semibold pb-8 py-6 px-8  rounded-lg border-2 ">
                 <h1 class="border-b-2 border-dashed pb-4">Seats Selected</h1>
                 <div id="list_container" class="flex   justify-between pb-6 py-2">
                     <span>Seats <div class="badge badge-primary h-6 text-lg text-white  font-bold w-10"><span id="seatsTotal">0</span></div></span>
                     <div>Class</div>
                     <div>Price</div>
                 </div>
-                <div id="bookingList" class="flex flex-col gap-1 pt-4   justify-between text-center w-full">
+                <div id="bookingList" class="flex sticky flex-col gap-1 pt-4   justify-between text-center w-full">
                     <div id="bookedRow" class="flex flex-col justify-between w-full border-green-400 shadow-lg rounded-lg py-4 text-red-900 px-4 border-2">
                        
                     </div>
@@ -125,6 +128,23 @@
                 
             </div>
         </section>
+                <!-- modal -->
+                    <dialog id="modal" class="modal hidden min-w-96 mx-auto ">
+                        <div class="modal-box flex flex-col bg-slate-100 justify-center items-center py-5  overflow-hidden ">
+                            <div class="flex gap-4 ">
+                                <i class="fa fa-check text-green-500 fa-2xl rounded-full border-2 px-4 py-4" aria-hidden="true"></i>
+                                <h3 id="msg_title" class="font-bold text-lg"></h3>
+                            </div>
+                           
+                            <p class="py-4" id="msg_body"></p>
+                            <div class="modal-action  mx-auto">
+                            <form method="dialog">
+                                <!-- if there is a button, it will close the modal -->
+                                <button id="modal_btn" class="btn"></button>
+                            </form>
+                            </div>
+                        </div>
+                    </dialog>
     </main>
     <script src="html-helper.js"></script>
     <script src="main.js"></script>
