@@ -1,28 +1,25 @@
 //global variables...
     const bookedSeats =[];
-    const elements =[   document.getElementById('coupon_container'),    //........0
+    const elements =[   document.getElementById('coupon_container'),    //......0
                         document.getElementById('discount_container'),  //......1
-                        document.getElementById('grand_total'),         //.............2
-                        document.getElementById('discount'),            //................3
-                        document.getElementById('percent'),             //.................4
-                        document.getElementById('default_text'),        //............5
-                        document.getElementById('seatsTotal'),          //..............6
-                        document.getElementById('total_price'),         //.............7
+                        document.getElementById('grand_total'),         //......2
+                        document.getElementById('discount'),            //......3
+                        document.getElementById('percent'),             //......4
+                        document.getElementById('default_text'),        //......5
+                        document.getElementById('seatsTotal'),          //......6
+                        document.getElementById('total_price'),         //......7
                         document.getElementsByClassName('bookedInfo'),  //......8
-                ];
+                    ];
+    const modalIcons =[`<i class="fa fa-check text-green-500 fa-2xl rounded-full border-2 px-4 py-4"></i>`, 
+                        `<i class="fa fa-times   fa-2xl rounded-full border-2 px-4 py-4"></i>`]
 //Get All Seats and load the booked seats to booked Array
     getSeatElements()
-//add eventListener to each seat element
 
-//Seat Click EventListener
+//Assign Seat Click EventListener
     getSeatElements().forEach(element =>{
         element.addEventListener('click',(e)=>{
-            if(bookedSeats.length > 3 && !bookedSeats.includes(e.target) ){
-                setModelText('Error','You cannot select more than 4 seats','bg-red-700')
-            }//end if
-            else if(bookedSeats.includes(e.target)){
-                setModelText('Error','You already selected this seat','bg-red-700')
-            }
+            if(bookedSeats.length > 3 && !bookedSeats.includes(e.target)){setModelText('Error','You cannot select more than 4 seats','bg-red-700',modalIcons[1])}
+            else if(bookedSeats.includes(e.target)){setModelText('Error','You already selected this seat','bg-red-700',modalIcons[1])}
             else{
                 e.target.classList.add('bg-green-500','text-white')
                 bookedSeats.push(e.target)
@@ -57,7 +54,6 @@
         } //end outer else
     })//end eventListener 
 
-
 //functions...
 function getSeatElements(){
     let elements =[];
@@ -69,12 +65,13 @@ function getSeatElements(){
         return elements;
 }//end function
 
-function setModelText( msgTitle='', msgBody='', msg_color='bg-green-400'){
+function setModelText( msgTitle='', msgBody='', msg_color='bg-green-400', icon=modalIcons[0]){
     const modal = document.getElementById('modal');
-    document.getElementById('msg_title').innerText = msgTitle;
+    document.getElementById('msg_title').innerHTML = icon+' '+msgTitle;
     document.getElementById('msg_title').classList.add(msg_color,'text-white','px-4','py-4');
+
     document.getElementById('msg_body').innerText = msgBody;
-    document.getElementById('modal_btn').innerText = 'Ok';
+    document.getElementById('modal_btn').innerText = 'Close';
     modal.classList.remove('hidden');
     modal.showModal();
 }//end function
@@ -84,3 +81,24 @@ function applyDiscount(elements, percent){
             elements[2].innerText = parseInt(elements[2].innerText)-(parseInt(elements[2].innerText)*percent);//grand total
             elements[4].innerText = (percent*100)+'%';//percent 
 }//end function
+
+function resetSeatSelection(){
+    bookedSeats.length=0;
+    //clear seat selection highlight
+                elements[6].innerText = 0;
+                // createBookingRow(e.target.innerText)
+                elements[7].innerText = 0;
+                elements[2].innerText = 0;
+
+    //clear booked row seats
+        document.getElementById('bookedRow').innerHTML=''
+        clearSeatHighlight()
+        elements[0].classList.remove('hidden')
+        document.getElementById('coupon_code').value=''
+        document.getElementById('coupon_code').setAttribute('placeholder','Paste Coupon Code?')
+        elements[1].classList.add('hidden')
+}
+
+function clearSeatHighlight(){
+    getSeatElements().forEach(element=>{element.classList.remove('bg-green-500','text-white')})
+}
