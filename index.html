@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>GH Ticketing Services</title>
 </head>
+
 <body>
     <!-- Navbar Start -->
     <nav class="lg:w-11/12 mx-auto py-4">
         <div class="navbar bg-slate-50">
             <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg border-2 bg-blue-100  rounded min-w-96 text-center font-semibold ">
+                        <li class="border-b-2 bg-blue-500 text-white py-4 "><a>GreyHound Home</a></li>
+                        <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Destination</a></li>
+                        <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Fares</a></li>
+                        <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Outlets</a></li>
+                        <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Contact Us</a></li>
+                    </ul>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg border-2 bg-blue-100  rounded min-w-96 text-center font-semibold ">
-                  <li class="border-b-2 bg-blue-500 text-white py-4 "><a>GreyHound Home</a></li>
-                  <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Destination</a></li>
-                  <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Fares</a></li>
-                  <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Outlets</a></li>
-                  <li class="border-b-2 bg-blue-500 text-white py-4 "><a>Contact Us</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost text-xl px-0">
-                <img src="images/logo.jpg"  width="100px" height="100px" alt="">
-                <div class="px-4 flex">
-                    <span class="font-bold text-blue-400 lg:text-2xl px-0 mx-0 ">G</span>
-                    <span class="lg:font-bold  lg:text-2xl lg:flex">Ticketing</span></a>
-                </div>
+                <a class="btn btn-ghost text-xl px-0">
+                    <img src="images/logo.jpg" width="100px" height="100px" alt="">
+                    <div class="px-4 flex">
+                        <span class="font-bold text-blue-400 lg:text-2xl px-0 mx-0 ">G</span>
+                        <span class="lg:font-bold  lg:text-2xl lg:flex">Ticketing</span>
+                </a>
             </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1 text-lg font-semibold text-blue-800">
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-lg font-semibold text-blue-800">
                 <li><a>GreyHound Home</a></li>
                 <li><a>Destination</a></li>
                 <li><a>Fares</a></li>
                 <li><a>Outlets</a></li>
                 <li><a>Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="navbar-end">     
-              <a class="btn btn-outline btn-success"> 
-                <i class="fas fa-bus fa-lg fa-fw text-green-700"></i> Get Tickets 
-              </a>
-            </div>
-          </div>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a class="btn btn-outline btn-success">
+                <i class="fas fa-bus fa-lg fa-fw text-green-700"></i> Get Tickets
+            </a>
+        </div>
+        </div>
     </nav>
     <!-- Navbar End -->
 
     <main class="lg:w-11/12 mx-auto">
-        <section class="z-30 rounded-lg"  style="background: linear-gradient(to bottom, rgba(14, 9, 9, 0.3) 49%, rgba(52, 47, 47, 0.1) 29%, rgba(0, 0, 0, 0.1) 100%),url('images/greyhound.webp') no-repeat ;background-size: cover;height: 600px;">
-                <div class="-z-10 flex lg:min-h-[600px]   flex-col  items-center  gap-16 py-20 " >
-                    <h1 class="text-6xl text-center font-bold text-white">Go Greyhound and Leave  <br> the Driving to Us</h1>
-                    <h1 class="text-xl text-white">Yes, you can run unit tests and view the results directly within the app. <br> The
-                        integrated testing features allow for a streamlined</h1>
-                    <button class="btn btn-success text-white text-xl text-center"><i class="fa fa-ticket fa-xl" aria-hidden="true"></i> Purchase tickets</button>
-                </div>
+        <section class="z-30 rounded-lg"
+            style="background: linear-gradient(to bottom, rgba(14, 9, 9, 0.3) 49%, rgba(52, 47, 47, 0.1) 29%, rgba(0, 0, 0, 0.1) 100%),url('images/greyhound.webp') no-repeat ;background-size: cover;height: 600px;">
+            <div class="-z-10 flex lg:min-h-[600px]   flex-col  items-center  gap-16 py-20 ">
+                <h1 class="text-6xl text-center font-bold text-white">Go Greyhound and Leave <br> the Driving to Us</h1>
+                <h1 class="text-xl text-white">Yes, you can run unit tests and view the results directly within the app.
+                    <br> The
+                    integrated testing features allow for a streamlined</h1>
+                <button class="btn btn-success text-white text-xl text-center"><i class="fa fa-ticket fa-xl"
+                        aria-hidden="true"></i> Purchase tickets</button>
+            </div>
         </section>
         <section class="flex  flex-col-reverse lg:gap-6 lg:pl-4 pr-2 lg:grid lg:grid-cols-2 border-2 py-6  
-                                ronded-3xl border-t-4 bg-amber-50 rounded-3xl border-green-400 mt-4" > 
-        <!-- Seat Layout Container -->
+                                ronded-3xl border-t-4 bg-amber-50 rounded-3xl border-green-400 mt-4">
+            <!-- Seat Layout Container -->
             <div id="seatContainer" class="bg-gray-50 py-6 px-4 rounded-md border-2">
                 <div class="text-2xl font-bold pb-4 px-2 border-dashed border-b-2">
                     <h1>Select Your Seat</h1>
                 </div>
-               
+
                 <div class="flex justify-between mb-4 border-dashed border-b-2 py-4">
                     <div class="flex gap-2 px-2">
                         <img src="images/seat-gray.png" alt=""> Available
@@ -74,79 +87,85 @@
                     <div class="flex gap-2 px-2">
                         <img src="images/seat-green-filled.png" alt=""> Selected
                     </div>
-                  
+
                 </div>
                 <div class="text-red-500 flex justify-end pr-2 lg:pr-16 pb-6  ">
-                    <div class='flex w-20 text-center border-2 font-semibold mx-2 rounded-md border-green-700 py-2 justify-center items-center'><img class="bg-gray-100" src="images/steering.webp" width="40px" alt=""></div> 
+                    <div
+                        class='flex w-20 text-center border-2 font-semibold mr-4 rounded-md border-green-700 py-2 justify-center items-center'>
+                        <img class="bg-gray-100" src="images/steering.webp" width="40px" alt=""></div>
                 </div>
-              
+
             </div>
-        <!-- Booking Row Container -->
+            <!-- Booking Row Container -->
             <div class="relative text-lg bg-gray-50 font-semibold pb-8 py-6 px-8  rounded-lg border-2 ">
-                <h1 class="border-b-2 border-dashed pb-4">Seats Selected</h1>
-                <div id="list_container" class="flex   justify-between pb-6 py-2">
-                    <span>Seats <div class="badge badge-primary h-6 text-lg text-white  font-bold w-10"><span id="seatsTotal">0</span></div></span>
+                <h1 class="  text-red-600 text-center" id="default_text">No Seats Selected</h1>
+                <div id="list_container" class=" flex w-full items-center justify-around  gap-8 border-b-2 border-t-2 border-dashed border-green-500 pb-2 pt-2 px-2">
+                    <span>  Seats 
+                        <div class="badge badge-primary h-6 text-lg text-white  font-bold w-10">
+                            <span id="seatsTotal">0</span>
+                        </div>
+                    </span>
                     <div>Class</div>
                     <div>Price</div>
                 </div>
-                <div id="bookingList" class="flex sticky flex-col gap-1 pt-4   justify-between text-center w-full">
-                    <div id="bookedRow" class="flex flex-col justify-between w-full border-green-400 shadow-lg rounded-lg py-4 text-red-900 px-4 border-2">
-                       
+                <div id="bookingList" class="flex flex-col gap-1 pt-4    text-center w-full">
+                    <div id="bookedRow" class="flex  flex-col gap-2 justify-between w-full rounded-lg py-4 text-red-900 px-4">
                     </div>
-                   
-                    <div class="flex justify-between border-t-4 border-b-2 border-black">
+                    <div class="flex justify-between border-t-2 border-b-2 border-black">
                         <h1>TOTAL PRICE</h1>
                         <h1>BDT = <span id="total_price">0</span></h1>
                     </div>
-                    <div id="coupon_container" class="flex lg:flex-row flex-col justify-between py-8 gap-0 bg-amber-100 border-t-2 border-black px-4 items-center">
-                        <h1 class="text-xl">Got A Coupon?</h1>
-                        <div  class="  ">
-                            <input id="coupon_code" type="text" class="px-6 bg-slate-100 rounded-lg border-2" placeholder="Paste Coupon Code"> 
-                            <button id="coupon_btn" class="btn btn-primary" >Apply</button>
 
+                    <!-- Coupon Container -->
+                    <div id="coupon_container"
+                        class="flex lg:flex-row flex-col justify-between py-8 gap-0 bg-amber-100 border-t-2 border-black px-4 items-center">
+                        <h1 class="text-xl">Got A Coupon?</h1>
+                        <div>
+                            <input id="coupon_code" type="text" class="px-6 bg-slate-100 rounded-lg border-2"
+                                placeholder="Paste Coupon Code">
+                            <button id="coupon_btn" class="btn btn-primary">Apply</button>
                         </div>
-                        
+                        <i class="fas fa-bus fa-lg fa-fw"></i>
                     </div>
                     <div id="discount_container" class="hidden bg-green-200 shadow-lg grid gap-8  grid-cols-2  border-b-2 border-black">
-                        
                         <div>
                             <span id="percent" class="text-red-600 font-bold text-xl">%</span>
                             <span class="text-red-600 font-bold text-xl">Discount Applied</span>
                         </div>
-                            <div >
-                                <span class="text-red-600 font-bold text-xl">  Discount Amt = </span>
-                                <span class="text-red-600 font-bold text-xl" id="discount">0</span>
-                            </div>
-                            
+                        <div>
+                            <span class="text-red-600 font-bold text-xl"> Discount Amt = </span>
+                            <span class="text-red-600 font-bold text-xl" id="discount">0</span>
+                        </div>
                     </div>
                     <div class="flex justify-between border-t-4 border-b-2 border-black">
                         <h1>GRAND TOTAL</h1>
                         <h1>BDT = <span id="grand_total">0</span></h1>
                     </div>
                 </div>
-                
-                
+
+
             </div>
         </section>
-                <!-- modal -->
-                    <dialog id="modal" class="modal hidden min-w-96 mx-auto ">
-                        <div class="modal-box flex flex-col bg-slate-100 justify-center items-center py-5  overflow-hidden ">
-                            <div class="flex gap-4 ">
-                                <i class="fa fa-check text-green-500 fa-2xl rounded-full border-2 px-4 py-4" aria-hidden="true"></i>
-                                <h3 id="msg_title" class="font-bold text-lg"></h3>
-                            </div>
-                           
-                            <p class="py-4" id="msg_body"></p>
-                            <div class="modal-action  mx-auto">
-                            <form method="dialog">
-                                <!-- if there is a button, it will close the modal -->
-                                <button id="modal_btn" class="btn"></button>
-                            </form>
-                            </div>
-                        </div>
-                    </dialog>
+        <!-- modal -->
+        <dialog id="modal" class="modal hidden min-w-96 mx-auto ">
+            <div class="modal-box flex flex-col bg-slate-100 justify-center items-center py-5  overflow-hidden ">
+                <div class="flex gap-4 ">
+                    <i class="fa fa-check text-green-500 fa-2xl rounded-full border-2 px-4 py-4" aria-hidden="true"></i>
+                    <h3 id="msg_title" class="font-bold text-lg"></h3>
+                </div>
+
+                <p class="py-4" id="msg_body"></p>
+                <div class="modal-action  mx-auto">
+                    <form method="dialog">
+                        <!-- if there is a button, it will close the modal -->
+                        <button id="modal_btn" class="btn"></button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
     <script src="html-helper.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
