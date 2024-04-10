@@ -9,6 +9,12 @@
                         document.getElementById('seatsTotal'),          //......6
                         document.getElementById('total_price'),         //......7
                         document.getElementsByClassName('bookedInfo'),  //......8
+                        document.getElementById('coupon_code'),         //......9
+                        document.getElementById('coupon_btn'),          //......10
+                        document.getElementById('next_btn'),          //......11
+                        document.getElementById('pax_phone'),          //......12
+                        document.getElementById('pax_name'),          //......13
+                        document.getElementById('pax_email'),          //......14
                     ];
 //Get All Seats and load the booked seats to booked Array
     getSeatElements()
@@ -26,12 +32,24 @@
                 elements[7].innerText = parseInt(elements[7].innerText) + parseInt(elements[8][2].innerText)
                 elements[2].innerText = parseInt(elements[7].innerText)
             }//end else
-            if(bookedSeats.length>0){elements[5].innerText='Seats Selected'}
+            if(bookedSeats.length ==4){
+                elements[9].removeAttribute('disabled')
+                elements[10].removeAttribute('disabled')
+            }
+            
+               
+            
+            if(bookedSeats.length>0){
+                elements[5].innerText='Seats Selected';
+                elements[11].removeAttribute('disabled')
+            }
+            
         })//end eventListener
     })//end forEach
 
+
 // Coupon button eventListener code...
-    document.getElementById('coupon_btn').addEventListener('click',()=>{
+    elements[10].addEventListener('click',()=>{
     //validation rules...
         const rules = [     (document.getElementById('coupon_code').value.localeCompare('NEW15')==0), 
                             (document.getElementById('coupon_code').value.localeCompare('Couple 20')==0), 
@@ -52,6 +70,22 @@
         } //end outer else
     })//end eventListener 
 
+    //next button eventListener
+    elements[11].addEventListener('click',(e)=>{
+        console.log(elements[12].value.length)
+        if( elements[12].value.length !=11){
+            setModelText('Error','Enter A Valid Phone no with 11 Digits','images/error.png')
+           
+        }
+        else{
+            setModelText('Booking Confirmed!', '<div class="flex flex-col text-black gap-5 items-center justify-center"><span class="text-[16px]">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</span><span class="text-sm" >Shortly you will find a confirmation in your email.</span></div>')
+            resetSeatSelection()
+            elements[12].value='';
+            elements[13].value='';
+            elements[14].value='';
+        }
+    })
+
 //functions...
 function getSeatElements(){
     let elements =[];
@@ -65,7 +99,7 @@ function getSeatElements(){
 
 function setModelText( msgTitle='', msgBody='', img_ref ){
     const modal = document.getElementById('modal');
-    document.getElementById('msg_title').innerHTML = `<div class='flex flex-col items-center justify-center'><img width=150 height=150 src='${img_ref}' /> <span>${msgTitle}<span></div>`;
+    document.getElementById('msg_title').innerHTML = `<div class='flex flex-col items-center justify-center'><img width=150 height=150 src=${img_ref} /> <span>${msgTitle}<span></div>`;
     document.getElementById('msg_title').classList.add('px-4','py-4','text-red-800');
     document.getElementById('msg_body').innerHTML = msgBody;
     document.getElementById('msg_body').classList.add('text-center','text-red-800')
@@ -93,8 +127,15 @@ function resetSeatSelection(){
         clearSeatHighlight()
         elements[0].classList.remove('hidden')
         document.getElementById('coupon_code').value=''
-        document.getElementById('coupon_code').setAttribute('placeholder','Paste Coupon Code?')
+        document.getElementById('coupon_code').setAttribute('placeholder','Paste Coupon Code Here')
         elements[1].classList.add('hidden')
+        elements[9].setAttribute('disabled','true')
+        elements[10].setAttribute('disabled','true')
+        elements[11].setAttribute('disabled','true')
+        elements[12].value='';
+        elements[13].value='';
+        elements[14].value='';
+
 }
 
 function clearSeatHighlight(){

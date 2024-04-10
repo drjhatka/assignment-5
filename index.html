@@ -78,7 +78,7 @@
             <div id="seatContainer" class="bg-gray-50 py-6 px-4 rounded-md border-2">
                 <div class="flex justify-between text-2xl font-bold pb-4 px-6 border-dashed border-b-2 ">
                     <h1>Select Your Seat</h1>
-                    <button class="mr-12 px-8 btn btn-accent bg-[#F28C28] font-bold  text-white " onclick="resetSeatSelection()">Reset</button>
+                    <button class="mr-12 px-8 btn btn-accent bg-[#F28C28] font-bold  text-white " onclick="resetSeatSelection()">Clear Selection</button>
                 </div>
                 <div class="flex justify-between mb-4 border-dashed border-b-2 py-4">
                     <div class="flex gap-2 px-2">
@@ -117,11 +117,11 @@
 
                     <!-- Coupon Container -->
                     <div id="coupon_container"
-                        class="flex lg:flex-row justify-center py-8 gap-0 bg-amber-100 border-t-2 border-black px-4 items-center">
+                        class="flex lg:flex-row justify-center py-8 gap-0 bg-amber-200 border-t-2 border-black px-4 items-center">
                         <div class="flex">
-                            <input id="coupon_code" type="text" class="px-6 bg-slate-100 rounded-lg border-2"
+                            <input disabled="true" id="coupon_code" type="text" class="px-6 bg-slate-50 rounded-lg border-2"
                                 placeholder="Paste Coupon Code">
-                            <button id="coupon_btn" class="btn btn-primary px-4">Apply</button>
+                            <button disabled="true" id="coupon_btn" class="btn btn-primary px-4">Apply</button>
                         </div>
                     </div>
                     <div id="discount_container" class="hidden px-10 bg-slate-50 shadow-lg flex justify-between  border-b-2 border-black">
@@ -139,6 +139,12 @@
                         <h1>GRAND TOTAL</h1>
                         <h1>BDT = <span id="grand_total">0</span></h1>
                     </div>
+                </div>
+                <div class="flex flex-col gap-8 bg-purple-50 pt-10">
+                    <input id="pax_name" "text" class="input border-2 border-green-800"placeholder="Passenger Name">
+                    <input id="pax_phone" type="number" class="input border-2 border-green-800"  placeholder="888 888 8888" pattern="[0-9]{3} [0-9]{3} [0-9]{5}" maxlength="11"   required/>
+                    <input id="pax_email" type="email" class="input border-2 border-green-800" placeholder="Email Address">
+                    <button disabled  id="next_btn" class="btn btn-success text-white">Next</button>
                 </div>
             </div>
         </section>
