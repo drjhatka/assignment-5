@@ -74,7 +74,7 @@
                     </div>
                   
                 </div>
-                <div class="text-red-500 flex justify-end pb-6  ">
+                <div class="text-red-500 flex justify-end pr-2 lg:pr-16 pb-6  ">
                     <div class='flex w-20 text-center border-2 font-semibold mx-2 rounded-md border-green-700 py-2 justify-center items-center'><img class="bg-gray-100" src="images/steering.webp" width="40px" alt=""></div> 
                 </div>
               
@@ -82,33 +82,43 @@
             <div class="text-lg bg-gray-50 font-semibold pb-8 py-6 px-8  rounded-lg border-2 ">
                 <h1 class="border-b-2 border-dashed pb-4">Seats Selected</h1>
                 <div id="list_container" class="flex   justify-between pb-6 py-2">
-                    <span>Seats <div class="badge badge-primary h-6 text-lg text-white  font-bold w-10">0</div></span>
+                    <span>Seats <div class="badge badge-primary h-6 text-lg text-white  font-bold w-10"><span id="seatsTotal">0</span></div></span>
                     <div>Class</div>
                     <div>Price</div>
                 </div>
-                <div id="booking_list" class="flex flex-col gap-1 pt-4   justify-between text-center w-full">
-                    <div class="flex justify-between w-full border-green-400 shadow-lg rounded-lg py-4 text-red-900 px-4 border-2">
-                        <h1>C1</h1>
-                        <h1 class="ml-20">Economy</h1>
-                        <h1>550</h1>
+                <div id="bookingList" class="flex flex-col gap-1 pt-4   justify-between text-center w-full">
+                    <div id="bookedRow" class="flex flex-col justify-between w-full border-green-400 shadow-lg rounded-lg py-4 text-red-900 px-4 border-2">
+                       
                     </div>
-                    <div class="flex justify-between w-full border-green-400 shadow-lg rounded-lg py-4 text-red-900 px-4 border-2">
-                        <h1>C1</h1>
-                        <h1 class="ml-20">Economy</h1>
-                        <h1>550</h1>
-                    </div>
+                   
                     <div class="flex justify-between border-t-4 border-b-2 border-black">
                         <h1>TOTAL PRICE</h1>
-                        <h1>BDT = <span id="total_price">0000</span></h1>
+                        <h1>BDT = <span id="total_price">0</span></h1>
                     </div>
-                    <div class="flex lg:flex-row flex-col justify-between py-8 gap-0 bg-amber-100 border-t-2 border-black px-4 items-center">
+                    <div id="coupon_container" class="flex lg:flex-row flex-col justify-between py-8 gap-0 bg-amber-100 border-t-2 border-black px-4 items-center">
                         <h1 class="text-xl">Got A Coupon?</h1>
-                        <div class="  ">
-                            <input type="text" class="px-6 bg-slate-100 rounded-lg border-2" placeholder="Paste Coupon Code"> 
-                            <button class="btn btn-primary">Apply</button>
+                        <div  class="  ">
+                            <input id="coupon_code" type="text" class="px-6 bg-slate-100 rounded-lg border-2" placeholder="Paste Coupon Code"> 
+                            <button id="coupon_btn" class="btn btn-primary" >Apply</button>
 
                         </div>
                         
+                    </div>
+                    <div id="discount_container" class="hidden bg-green-200 shadow-lg grid gap-8  grid-cols-2  border-b-2 border-black">
+                        
+                        <div>
+                            <span id="percent" class="text-red-600 font-bold text-xl">%</span>
+                            <span class="text-red-600 font-bold text-xl">Discount Applied</span>
+                        </div>
+                            <div >
+                                <span class="text-red-600 font-bold text-xl">  Discount Amt = </span>
+                                <span class="text-red-600 font-bold text-xl" id="discount">0</span>
+                            </div>
+                            
+                    </div>
+                    <div class="flex justify-between border-t-4 border-b-2 border-black">
+                        <h1>GRAND TOTAL</h1>
+                        <h1>BDT = <span id="grand_total">0</span></h1>
                     </div>
                 </div>
                 
