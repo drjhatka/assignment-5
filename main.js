@@ -16,10 +16,10 @@
                         document.getElementById('pax_name'),          //......13
                         document.getElementById('pax_email'),          //......14
                     ];
-//Get All Seats and load the booked seats to booked Array
+//Get All Seats and load the booked seats to booked Array...
     getSeatElements()
 
-//Assign Seat Click EventListener
+//Assign Seat Click EventListener...
     getSeatElements().forEach(element =>{
         element.addEventListener('click',(e)=>{
             if(bookedSeats.length > 3 && !bookedSeats.includes(e.target)){setModelText('ERROR','You cannot select more than 4 seats','images/error.png')}
@@ -36,14 +36,10 @@
                 elements[9].removeAttribute('disabled')
                 elements[10].removeAttribute('disabled')
             }
-            
-               
-            
             if(bookedSeats.length>0){
                 elements[5].innerText='Seats Selected';
                 elements[11].removeAttribute('disabled')
-            }
-            
+            }  
         })//end eventListener
     })//end forEach
 
@@ -70,7 +66,7 @@
         } //end outer else
     })//end eventListener 
 
-    //next button eventListener
+//Next button eventListener
     elements[11].addEventListener('click',(e)=>{
         console.log(elements[12].value.length)
         if( elements[12].value.length !=11){
@@ -118,10 +114,8 @@ function resetSeatSelection(){
     bookedSeats.length=0;
     //clear seat selection highlight
                 elements[6].innerText = 0;
-                // createBookingRow(e.target.innerText)
                 elements[7].innerText = 0;
                 elements[2].innerText = 0;
-
     //clear booked row seats
         document.getElementById('bookedRow').innerHTML=''
         clearSeatHighlight()
@@ -135,7 +129,6 @@ function resetSeatSelection(){
         elements[12].value='';
         elements[13].value='';
         elements[14].value='';
-
 }
 
 function clearSeatHighlight(){
