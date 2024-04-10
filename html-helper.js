@@ -19,9 +19,9 @@ function createSeat(row){
 
 function createBookingRow(seatNo){
     const div = document.createElement('div');
-    div.classList.add('grid','grid-cols-3','w-full','gap-36','border-2','rounded-lg','border-green-700','px-8','py-2','shadow-lg')
+    div.classList.add('grid','grid-cols-3','lg:w-full','gap-24','lg:gap-36','border-2','rounded-lg','border-green-700','px-8','py-2','shadow-lg')
     const html=` 
-                <div class='flex w-36 items-center gap-8 text-md'>
+                <div class='flex w-full lg:w-36 items-center gap-8 text-md'>
                     <i class="fas fa-ticket fa-lg fa-fw text-blue-700"> </i>
                     <h1 class="bookedInfo">${seatNo}</h1>
                 </div>

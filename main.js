@@ -10,8 +10,6 @@
                         document.getElementById('total_price'),         //......7
                         document.getElementsByClassName('bookedInfo'),  //......8
                     ];
-    const modalIcons =[`<i class="fa fa-check text-green-500 fa-2xl rounded-full border-2 px-4 py-4"></i>`, 
-                        `<i class="fa fa-times   fa-2xl rounded-full border-2 px-4 py-4"></i>`]
 //Get All Seats and load the booked seats to booked Array
     getSeatElements()
 
@@ -33,7 +31,7 @@
     })//end forEach
 
 // Coupon button eventListener code...
-    document.getElementById('coupon_btn').addEventListener('click',(e)=>{
+    document.getElementById('coupon_btn').addEventListener('click',()=>{
     //validation rules...
         const rules = [     (document.getElementById('coupon_code').value.localeCompare('NEW15')==0), 
                             (document.getElementById('coupon_code').value.localeCompare('Couple 20')==0), 
@@ -46,7 +44,7 @@
                 elements[0].classList.add('hidden');
                 elements[1].classList.remove('hidden');
                 rules[0] ? applyDiscount(elements,0.15):applyDiscount(elements,0.20);
-                setModelText('Discount Applied',(rules[0]? '15% Discount Applied Successfully!':'20% Discount Applied Successfully!'),'images/success.png')
+                setModelText('Booking Confirmed!',(rules[0]? '<div class="flex flex-col text-black gap-5 items-center justify-center"><span class="text-[16px]">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</span><span class="text-sm" >Shortly you will find a confirmation in your email.</span></div>':''),'images/success.png')
                 }          
         }//end outer if
         else{
@@ -69,7 +67,7 @@ function setModelText( msgTitle='', msgBody='', img_ref ){
     const modal = document.getElementById('modal');
     document.getElementById('msg_title').innerHTML = `<div class='flex flex-col items-center justify-center'><img width=150 height=150 src='${img_ref}' /> <span>${msgTitle}<span></div>`;
     document.getElementById('msg_title').classList.add('px-4','py-4','text-red-800');
-    document.getElementById('msg_body').innerText = msgBody;
+    document.getElementById('msg_body').innerHTML = msgBody;
     document.getElementById('msg_body').classList.add('text-center','text-red-800')
     document.getElementById('modal_btn').innerText = 'Continue';
     modal.classList.remove('hidden');
