@@ -1,9 +1,10 @@
-const rows = ['A','B','C','D','E','F','G','H','I','J']
-for (let index = 0; index < rows.length; index++) {
-    createSeat(rows[index])   
+for (let index = 0; index < 10; index++) {
+    createSeat(['A','B','C','D','E','F','G','H','I','J'][index])   
 }
 
 //Helper functions...
+
+//Create Dynamic Seat layout...
 function createSeat(row){
     const seatContainer = document.getElementById('seatContainer')
     const container = document.createElement('div');
@@ -17,6 +18,7 @@ function createSeat(row){
     seatContainer.appendChild(container)
 }//end function
 
+//Create Dynamic Booking rows...
 function createBookingRow(seatNo){
     const div = document.createElement('div');
     div.classList.add('grid','grid-cols-3','lg:w-full','gap-24','lg:gap-36','border-2','rounded-lg','border-green-700','px-8','py-2','shadow-lg')

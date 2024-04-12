@@ -15,6 +15,7 @@
                         document.getElementById('pax_phone'),          //......12
                         document.getElementById('pax_name'),          //......13
                         document.getElementById('pax_email'),          //......14
+                        document.getElementById('total_seats'),          //......15
                     ];
 //Get All Seats and load the booked seats to booked Array...
     getSeatElements()
@@ -31,6 +32,7 @@
                 createBookingRow(e.target.innerText)
                 elements[7].innerText = parseInt(elements[7].innerText) + parseInt(elements[8][2].innerText)
                 elements[2].innerText = parseInt(elements[7].innerText)
+                elements[15].innerText = parseInt(elements[15].innerText)-1;
             }//end else
             if(bookedSeats.length ==4){
                 elements[9].removeAttribute('disabled')
@@ -43,9 +45,8 @@
         })//end eventListener
     })//end forEach
 
-
 // Coupon button eventListener code...
-    elements[10].addEventListener('click',()=>{
+    elements[10].addEventListener('click',(e)=>{
     //validation rules...
         const rules = [     (document.getElementById('coupon_code').value.localeCompare('NEW15')==0), 
                             (document.getElementById('coupon_code').value.localeCompare('Couple 20')==0), 
@@ -58,7 +59,7 @@
                 elements[0].classList.add('hidden');
                 elements[1].classList.remove('hidden');
                 rules[0] ? applyDiscount(elements,0.15):applyDiscount(elements,0.20);
-                setModelText('Booking Confirmed!',(rules[0]? '<div class="flex flex-col text-black gap-5 items-center justify-center"><span class="text-[16px]">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</span><span class="text-sm" >Shortly you will find a confirmation in your email.</span></div>':''),'images/success.png')
+                setModelText('Discount Applied!',(rules[0]? `15% Discount Applied`:'20% Discount Applied'),'images/success.png')
                 }          
         }//end outer if
         else{
@@ -66,7 +67,7 @@
         } //end outer else
     })//end eventListener 
 
-//Next button eventListener
+//Purchase button eventListener
     elements[11].addEventListener('click',(e)=>{
         console.log(elements[12].value.length)
         if( elements[12].value.length !=11){
@@ -74,11 +75,9 @@
            
         }
         else{
-            setModelText('Booking Confirmed!', '<div class="flex flex-col text-black gap-5 items-center justify-center"><span class="text-[16px]">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</span><span class="text-sm" >Shortly you will find a confirmation in your email.</span></div>')
+            setModelText('Booking Confirmed!', 
+                    '<div class="flex flex-col text-black gap-5 items-center justify-center"><span class="text-[16px]">Thank you for Booking Our Bus Seats.<br>We are working hard to find the best service and deals for you.</span><span class="text-sm" >Shortly you will find a confirmation in your email.</span></div>','images/success.png')
             resetSeatSelection()
-            elements[12].value='';
-            elements[13].value='';
-            elements[14].value='';
         }
     })
 
@@ -129,6 +128,7 @@ function resetSeatSelection(){
         elements[12].value='';
         elements[13].value='';
         elements[14].value='';
+        elements[15].innerText=40;
 }
 
 function clearSeatHighlight(){
