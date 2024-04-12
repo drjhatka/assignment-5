@@ -15,7 +15,7 @@
     <nav class="lg:w-11/12 mx-auto py-4">
         <div class="navbar bg-slate-50">
             <div class="navbar-start">
-                <div class="dropdown">
+                <div class="dropdown z-40">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -61,17 +61,33 @@
     <main class="lg:w-11/12 mx-auto">
 
     <!-- Banner section with image overlay -->
-        <section class="z-30 rounded-lg"
-            style="background: linear-gradient(to bottom, rgba(32, 30, 30, 0.6) 50%, rgba(21, 17, 17, 0.4) 30%, rgba(0, 0, 0, 0.4) 10%),url('images/greyhound.webp') no-repeat ;background-size: cover;height: 600px;">
-            <div class="-z-10 flex lg:min-h-[600px]   flex-col  items-center  gap-16 py-20 ">
-                <h1 class="text-6xl text-center font-bold text-white">Go Greyhound and Leave <br> the Driving to Us</h1>
-                <h1 class="text-xl text-white">Greyhound’s iconic brand is synonymous with affordable long-distance <br> travel in North America and a unique national network</h1>
-                <a href="#seatContainer" class="btn btn-success text-white text-xl text-center"><i class="fa fa-ticket fa-xl"
-                        aria-hidden="true"></i> Purchase tickets</a>
-            </div>
-        </section>
+        
+            <section class="z-30 relative rounded-lg"
+                style="background: linear-gradient(to bottom, rgba(32, 30, 30, 0.6) 50%, rgba(21, 17, 17, 0.4) 30%, rgba(0, 0, 0, 0.4) 10%),url('images/greyhound.webp') no-repeat ;background-size: cover;height: 600px;">
+                <div class="-z-10 flex lg:min-h-[600px]   flex-col  items-center  gap-16 py-20 ">
+                    <h1 class="text-6xl text-center font-bold text-white">Go Greyhound and Leave <br> the Driving to Us</h1>
+                    <h1 class="text-xl text-center text-white">Greyhound’s iconic brand is synonymous with affordable long-distance <br> travel in North America and a unique national network</h1>
+                    <a href="#seatContainer" class="btn btn-success text-white text-xl text-center"><i class="fa fa-ticket fa-xl"
+                            aria-hidden="true"></i> Purchase tickets</a>
+                </div>
+                <div class=" flex gap-1 lg:gap-8 w-full mt-2 lg:justify-center lg:relative  lg:bottom-16">
+                    <div class="flex  bg-white px-6 py-4 gap-4 rounded-lg lg:border-b-green-700 border-b-4 border-green-700 border-2">
+                        <div><img src="images/people.png" alt=""></div>
+                        <div><h1 class="text-2xl font-bold">500K+</h1> <small class="font-bold">Regiestered users</small></div>
+                    </div>
+                    <div class="flex bg-white px-6 py-4 gap-4 rounded-lg lg:border-b-green-700 border-b-4 border-green-700 border-2">
+                        <div><img src="images/ticket-cupon.png" alt=""></div>
+                        <div><h1 class="text-2xl font-bold">170 Millions</h1> <small class="font-bold">Tickets Sold</small></div>
+                    </div>
+                    <div class="flex bg-white px-6 py-4 gap-4 rounded-lg lg:border-b-green-700 border-b-4 border-green-700 border-2 ">
+                        <div><img src="images/stoppage.png" alt=""></div>
+                        <div><h1 class="text-2xl font-bold">80K+</h1> <small class="font-bold">Rental Partners</small></div>
+                    </div>
+                </div>
+            </section>
+           
 
-        <section><div class="text-center py-10 font-bold"><h1 class="text-3xl">Best Offers for you!</h1></div></section>
+        <section><div class="text-center mt-24 py-10 font-bold"><h1 class="text-3xl">Best Offers for you!</h1></div></section>
 
         <!-- Ticket Section -->
         <section class="py-10 px-10 shadow-sm bg-white  flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 gap-10 border-2 rounded-lg">
@@ -86,10 +102,10 @@
                     <h1 class="text-4xl font-bold">NEW15</h1>
                     <small class="font-bold">Coupon Code</small>
                 </div>
-                <div class="bg-white absolute -top-10 left-[60%] lg:left-[55%]  min-h-16 min-w-16 space-x-0   rounded-full">
+                <div class="bg-white absolute border-b-green-600 border-b-2 -top-10 left-[60%] lg:left-[55%]  min-h-16 min-w-16 space-x-0   rounded-full">
                     
                 </div>
-                <div class="bg-white absolute -bottom-10 left-[60%] lg:left-[55%]  min-h-16 min-w-16 space-x-0   rounded-full">
+                <div class="bg-white absolute -bottom-10 border-t-green-600 border-t-2 left-[60%] lg:left-[55%]  min-h-16 min-w-16 space-x-0   rounded-full">
                     
                 </div>
             </div>
@@ -118,11 +134,15 @@
             
         </section>
         <!-- Company Profile -->
-        <section class="flex justify-center items-center">
-            <h1>GrayHound Services</h1>
+        <section class="flex justify-center items-center py-10  mt-8 border-b-0 border-4 shadow-md mb-12 border-green-400 rounded-lg">
+            <div class="flex flex-col justify-center items-center gap-4 px-4 py-6">
+                <h1 class="text-4xl font-bold text-green-800 ">GrayHound Services</h1>
+                <p class="text-center text-red-800 font-semibold">Greyhound’s iconic brand is synonymous with affordable long-distance
+                    travel in North America and a unique national network</p>
+            </div>
         </section>
         <!-- Route Section -->
-        <section class="flex w-full mt-10 mb-10 shadow-md rounded-lg">
+        <section class="flex w-full mb-10 shadow-md rounded-lg border-t-2 border-2 border-r-2 border-green-600 border-r-green-500">
             <div class="flex flex-col-reverse lg:flex-row relative border-2 rounded-lg w-full">
                 <div class=" w-full  flex-col items-center rounded-lg border-1 border-r-2 border-r-dashed py-10 px-4 flex gap-5 justify-center">
                     <div class="flex gap-16 justify-between w-full">
@@ -140,7 +160,7 @@
                     </div>
                    <div class="w-full bg-slate-200 px-4  py-4 rounded-lg">
 
-                       <div class="flex py-2    lg:font-semibold justify-between w-full border-b-2 border-black border-dashed">
+                       <div class="flex py-2    font-semibold justify-between w-full border-b-2 border-black border-dashed">
                            <h1>Route</h1> <h1>Austin,TX-NYC</h1>
                        </div>
                        <div class="flex py-2 font-semibold justify-between w-full border-b-2 border-black border-dashed ">
@@ -163,8 +183,8 @@
                
 
                 <!-- absolute positioning divs to create a ticket like div  -->
-                <div class="bg-white hidden lg:block absolute border-b-2 -top-10 left-[57%] lg:left-[69%]  min-h-16 min-w-16 space-x-0   rounded-full"></div>
-                <div class="bg-white absolute hidden lg:block -bottom-10 border-t-2 left-[57%] lg:left-[69%]  min-h-16 min-w-16 space-x-0   rounded-full"></div>
+                <div class="bg-white hidden lg:block absolute border-b-green-600  border-b-2 -top-10 left-[57%] lg:left-[69%]  min-h-16 min-w-16 space-x-0   rounded-full"></div>
+                <div class="bg-white absolute hidden lg:block border-t-green-600 -bottom-10 border-t-2 left-[57%] lg:left-[69%]  min-h-16 min-w-16 space-x-0   rounded-full"></div>
             </div>
             
         </section>
