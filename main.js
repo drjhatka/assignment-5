@@ -86,7 +86,7 @@ function getSeatElements(){
     let elements =[];
         for (let index = 0; index < 10; index++) {
             for (let innerIndex = 1; innerIndex  <5; innerIndex++) {
-               elements.push(document.getElementById(rows[index]+''+innerIndex));//rows array comes from html-helper.js   
+               elements.push(document.getElementById(['A','B','C','D','E','F','G','H','I','J'][index]+''+innerIndex));   
             }//end inner for
         }//end outer for
         return elements;
